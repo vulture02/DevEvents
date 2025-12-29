@@ -5,24 +5,23 @@ import events from '@/lib/constants'
 const Page = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 py-16">
-      
-      {/* Heading */}
+     
       <h1 className="text-center text-4xl sm:text-5xl font-bold leading-tight">
         The everyday <br />
         events you can&apos;t miss
       </h1>
 
-      {/* Sub heading */}
+     
       <p className="text-center mt-5 text-gray-600 text-lg">
         Hackathons, meetups, and conferences — all in one place
       </p>
 
-      {/* CTA */}
+    
       <div className="flex justify-center mt-8">
         <ExploreBtn />
       </div>
 
-      {/* Featured Events */}
+   
       <div className="mt-20 space-y-7">
         <h3 className="text-2xl font-semibold">
           Featured events

@@ -1,8 +1,12 @@
 import EventCard from '@/components/EventCard'
 import ExploreBtn from '@/components/ExploreBtn'
+import { IEvent } from '@/database'
 import events from '@/lib/constants'
 
-const Page = () => {
+const BASE_URL=process.env.NEXT_PUBLIC_BASE_URL;
+const Page = async () => {
+  const response=await fetch(`${BASE_URL}/api/events`,{})
+  const {events}=await response.json();
   return (
     <section className="max-w-7xl mx-auto px-4 py-16">
      
@@ -28,7 +32,7 @@ const Page = () => {
         </h3>
 
         <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {events.map((event) => (
+          {events && events.length>0 &&  events.map((event:IEvent) => (
             <li key={event.title} className="list-none">
               <EventCard {...event} />
             </li>
